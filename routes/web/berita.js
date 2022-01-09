@@ -72,7 +72,7 @@ router.post("/tambah", upload.single("img_header"), (req, res) => {
 	});
 });
 
-router.get("/baca/:id", ensureAuthenticated, async (req, res) => {
+router.get("/baca/:id", async (req, res) => {
 	const berita = await Berita.findById(req.params.id);
 	console.log(berita);
 	return res.render("home/berita/baca", {
