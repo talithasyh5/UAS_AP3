@@ -1,5 +1,12 @@
 <%- include ('../partial/header'); -%>
 
-<h1>ini homepage</h1>
-
-<%- include ('../partial/footer'); -%>
+<h1>Home</h1>
+<% berita.forEach(element => { %>
+<a href="/berita/baca/<%= element.id %> ">
+    <div class="jumbotron">
+        <img src="/public/<%= element.img_header %> " class="img-responsive img-rounded" style="width: 300px; margin-left: auto; margin-right: auto;" srcset="">
+        <h3><%= element.title %> </h3>
+        <small>dibuat pada <%= element.created_at %></small>
+    </div>
+</a>
+<% }) %> <%- include ('../partial/footer'); -%>

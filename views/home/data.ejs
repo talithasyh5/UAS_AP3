@@ -1,5 +1,58 @@
 <%- include ('../partial/header'); -%>
 
-<h1>ini data warga</h1>
+<h1>Data Warga</h1>
+<div>
+    <a href="/data/tambah" class="btn btn-primary" style="margin: 10px;">Tambah Data</a>
+</div>
+<table class="table" id="warga">
+<thead>
+    <tr>
+        <th>
+            No
+        </th>
+        <th>
+            Nama
+        </th>
+        <th>
+            Nomor HP
+        </th>
+        <th>
+            Status Tempat Tinggal
+        </th>
+        <th>
+            Agama
+        </th>
+        <th>
+            Aksi
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <% warga.forEach((element, index) => { %>
+        <tr>
+            <td>
+                <%= index+1 %> 
+            </td>
+            <td>
+                <%= element.nama %> 
+            </td>
+            <td>
+                <%= element.nohp || "-" %> 
+            </td>
+            <td>
+                <%= element.status_tempat_tinggal || "-" %> 
+            </td>
+            <td>
+                <%= element.agama || "-" %> 
+            </td>
+            <td>
+                <a href="/data/edit/<%= element._id %> " class="btn btn-info">Edit</a>
+                <a href="/data/hapus/<%= element._id %> " class="btn btn-danger">Hapus</a>
+            </td>
+        </tr>
+    <% }) %>
+    
+</tbody>
+</table>
 
 <%- include ('../partial/footer'); -%>

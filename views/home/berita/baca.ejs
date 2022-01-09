@@ -1,0 +1,19 @@
+<%- include ('../../partial/header'); -%>
+<div>
+	<h1><%= berita.title %></h1>
+	<img
+		src="/public/<%= berita.img_header %>"
+		alt=""
+		style=" display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;"
+		srcset=""
+	/>
+    <small>Dibuat pada <%= berita.created_at %> </small>
+    <br>
+    <br>
+    <p><%= berita.content %> </p>
+</div>
+
+<%- include ('../../partial/footer'); -%>

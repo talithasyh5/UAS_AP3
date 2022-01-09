@@ -1,0 +1,22 @@
+<%- include ('../../partial/header'); -%>
+<h1>Tambah Berita</h1>
+<% if (success) { %>
+    <div class="alert alert-success" role="alert">Data berhasil disimpan</div>
+<% } %>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>gambar header</label>
+        <input type="file" name="img_header" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Judul</label>
+        <input type="text" name="title" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Konten</label>
+        <textarea name="content" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+    <a href="/berita" class="btn btn-info">Kembali</a>
+</form>
+<%- include ('../../partial/footer'); -%>

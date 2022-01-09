@@ -1,0 +1,39 @@
+<%- include ('../../partial/header'); -%>
+<h1>Tambah Data Warga</h1>
+<% if (success) { %>
+    <div class="alert alert-success" role="alert">Data berhasil disimpan</div>
+<% } %>
+<form method="post">
+    <div class="form-group">
+        <label>Nama</label>
+        <input type="text" name="nama" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Alamat</label>
+        <input type="text" name="alamat" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Nomor HP</label>
+        <input type="text" name="nohp" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Status Tempat Tinggal</label>
+        <select name="status_tempat_tinggal" class="form-control">
+            <option>Kontrak</option>
+            <option>Tempat tinggal tetap</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label>Agama</label>
+        <select name="agama" class="form-control">
+            <option>Islam</option>
+            <option>Kristen</option>
+            <option>Katolik</option>
+            <option>Hindu</option>
+            <option>Budha</option>
+          </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+    <a href="/data" class="btn btn-info">Kembali</a>
+</form>
+<%- include ('../../partial/footer'); -%>

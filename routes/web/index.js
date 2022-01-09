@@ -2,19 +2,17 @@ var express = require("express");
 
 var router = express.Router();
 
+//TODO:: add in error and info
 
-//TODO:: add in error and info 
+router.use(function (req, res, next) {
+	res.locals.currentUser = req.user;
+	res.locals.error = req.flash("error");
+	res.locals.info = req.flash("info");
 
-router.use(function(req,res, next){
-    res.locals.currentUser = req.user;
-    res.locals.error = req.flash("error");
-    res.locals.info = req.flash("info")
-
-    next();
+	next();
 });
 
-
 router.use("/", require("./home"));
-
+router.use("/berita", require("./berita"));
 
 module.exports = router;

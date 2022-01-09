@@ -25,6 +25,7 @@ app.use(session({
     resave:false,
     saveUninitialized:false
 }));
+app.use('/public', express.static('public'))
 
 app.use(passport.initialize());
 app.use(passport.session());
